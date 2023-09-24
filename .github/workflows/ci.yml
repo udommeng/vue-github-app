@@ -1,0 +1,21 @@
+name: 'ci'
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ติดตั้งการใช้งาน node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - run: npm ci  #คำสั่่งนี้ เทียบเท่า npm install
+
+      - name: Run lint
+        run: npm run lint
