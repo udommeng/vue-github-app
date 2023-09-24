@@ -3,7 +3,7 @@ name: 'build and deploy production'
 on:
   push:
     tags:
-      - '*'
+      - 'v1000'  # '*'  เราทุก Tag 
 
 jobs:
   build-production-job:
